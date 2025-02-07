@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín 💖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #FFE6EE;
+        }
+        h1 {
+            color: #FF1493;
+        }
+        button {
+            background-color: #FF69B4;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>💖 ¿Quieres ser mi cita el 14 de febrero? 💖</h1>
+    <button onclick="fetch('/yes').then(res => res.json()).then(data => alert(data.message))">¡Sí! 💕</button>
+    <button onclick="moverNo()">No 😅</button>
+
+    <script>
+        function moverNo() {
+            fetch('/no').then(res => res.json()).then(data => {
+                alert("Intentaste huir, pero no puedes 😆");
+            });
+        }
+    </script>
+</body>
+</html>
